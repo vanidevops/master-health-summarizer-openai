@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <title>Master Health Summarizer</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header text-center bg-primary text-white">
+                <h3>Master Health Summarizer</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                   <img src="{{ url_for('static', filename='medical_image.jpg') }}" alt="Medical Image" class="img-fluid mb-4">
+                </div>
+                <textarea id="reportData" class="form-control" rows="10" placeholder="Paste your master health report here..."></textarea>
+                <button class="btn btn-primary mt-3 btn-block" onclick="getSummary()">Summarize</button>
+            </div>
+            <div class="card-footer bg-light">
+                <h5>Summary:</h5>
+                <p id="summaryOutput" class="text-muted">Your summary will appear here...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
