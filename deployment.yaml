@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: masterhealth-assistant
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: masterhealth-assistant
+  template:
+    metadata:
+      labels:
+        app: masterhealth-assistant
+    spec:
+      containers:
+      - name: masterhealth-assistant
+        image: <your-dockerhub-username>/masterhealth-assistant:latest
+        ports:
+        - containerPort: 5000
