@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: masterhealth—assistant-service
+spec:
+  selector:
+    app: masterhealth-assistant
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
